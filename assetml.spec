@@ -15,7 +15,6 @@ Release: 	%release
 License: 	GPL
 Group: 		System/Libraries
 Source:		lib%name-%version.tar.bz2
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	glib2-devel >= 2.0.0
