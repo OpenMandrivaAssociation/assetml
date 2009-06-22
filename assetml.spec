@@ -1,6 +1,6 @@
 %define name		assetml
 %define version      	1.2.1
-%define release 	%mkrel 5
+%define release 	%mkrel 6
 
 %define major 0
 %define libname %mklibname %name %major
@@ -12,7 +12,7 @@ Summary: Library assetml to share and reuse content like image and audio file
 Name: 		%name
 Version: 	%version
 Release: 	%release
-License: 	GPL
+License: 	GPLv2+
 Group: 		System/Libraries
 Source:		lib%name-%version.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -53,7 +53,7 @@ AssetML Devel Library
 
 %build
 
-%configure
+%configure2_5x
 
 %make
 
