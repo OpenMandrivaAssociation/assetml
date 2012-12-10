@@ -1,6 +1,6 @@
 %define name		assetml
 %define version      	1.2.1
-%define release 	%mkrel 7
+%define release 	8
 
 %define major 0
 %define libname %mklibname %name %major
@@ -15,7 +15,6 @@ Release: 	%release
 License: 	GPLv2+
 Group: 		System/Libraries
 Source:		lib%name-%version.tar.bz2
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	glib2-devel >= 2.0.0
@@ -58,8 +57,6 @@ AssetML Devel Library
 %make
 
 %install
-rm -Rf $RPM_BUILD_ROOT
-
 %makeinstall
 
 %find_lang lib%name
@@ -72,24 +69,12 @@ rm -Rf $RPM_BUILD_ROOT
 
 %_remove_install_info %{name}.info
 
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f lib%name.lang
 %defattr(-, root, root)
 %doc AUTHORS COPYING ChangeLog INSTALL README THANKS
 %_bindir/*
 %_datadir/gnome/help/*
 %_infodir/*
-%_bindir/*
 
 %files -n %libname
 %defattr(-,root,root)
@@ -98,8 +83,38 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %libnamedev
 %defattr(-, root, root)
 %_libdir/lib*.so
-%_libdir/*a
 %_includedir/libassetml*/*
 %_libdir/pkgconfig/libassetml.pc
 
+
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 1.2.1-7mdv2011.0
++ Revision: 616614
+- the mass rebuild of 2010.0 packages
+
+* Mon Jun 22 2009 Jérôme Brenier <incubusss@mandriva.org> 1.2.1-6mdv2010.0
++ Revision: 388026
+- fix build (use configure2_5x)
+- fix license tag
+
+* Thu Jun 19 2008 Thierry Vignaud <tv@mandriva.org> 1.2.1-5mdv2009.0
++ Revision: 226184
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.2.1-4mdv2008.1
++ Revision: 140690
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Wed Nov 15 2006 Lenny Cartier <lenny@mandriva.com> 1.2.1-4mdv2007.0
++ Revision: 84433
+- Import assetml
 
