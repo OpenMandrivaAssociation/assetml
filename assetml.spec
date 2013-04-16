@@ -1,6 +1,6 @@
 %define name		assetml
 %define version      	1.2.1
-%define release 	8
+%define release: 	9
 
 %define major 0
 %define libname %mklibname %name %major
@@ -61,13 +61,6 @@ AssetML Devel Library
 
 %find_lang lib%name
 
-%post
-
-%_install_info %{name}.info
-
-%preun
-
-%_remove_install_info %{name}.info
 
 %files -f lib%name.lang
 %defattr(-, root, root)
