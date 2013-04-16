@@ -1,6 +1,6 @@
 %define name		assetml
 %define version      	1.2.1
-%define release: 	9
+%define release: 	10
 
 %define major 0
 %define libname %mklibname %name %major
