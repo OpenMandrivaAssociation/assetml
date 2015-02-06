@@ -7,7 +7,7 @@
 Summary: Library assetml to share and reuse content like image and audio file
 Name: 		assetml
 Version: 	1.2.1
-Release: 	10
+Release: 	11
 License: 	GPLv2+
 Group: 		System/Libraries
 Source:		lib%name-%version.tar.bz2
