@@ -18,7 +18,7 @@ BuildRequires:	glibc-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	texi2html
 BuildRequires:	texinfo
-URL: 		http://ofset.sf.net/assetml
+URL: 		https://ofset.sf.net/assetml
 
 %description
 This is a library based on an XML file format that is used to share and reuse 
