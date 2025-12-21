@@ -11,6 +11,11 @@ Release: 	11
 License: 	GPLv2+
 Group: 		System/Libraries
 Source:		lib%name-%version.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	glib2-devel >= 2.0.0
